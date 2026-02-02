@@ -4,7 +4,7 @@
  * CSD440 Server-Side Scripting
  * Module 4 Programming Assignment
  * 2/1/2026
- * Comment: Tests strings to determine if they are palindromes.t
+ * Comment: Tests strings to determine if they are palindromes.
  */
 
 /**
@@ -40,7 +40,7 @@ $testStrings = [
 
 echo "<h2>Palindrome Test Results</h2>";
 
-// Start a simple table for a cleaner layout
+// Simple table for a cleaner layout
 echo "<table border='1' cellpadding='10' style='border-collapse: collapse; font-family: Arial, sans-serif;'>";
 echo "<tr style='background-color: #f2f2f2;'>
         <th>Original String</th>
