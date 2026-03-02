@@ -1,0 +1,282 @@
+/**
+ * Clint Scott
+ * CSD440 Server-Side Scripting
+ * Module 9 Programming Assignment
+ * Retro CRT Stylesheet
+ * 03/01/2026
+ *
+ * This program:
+ * - Defines the global visual identity for the Retro Gaming Manager
+ * - Implements a high-contrast CRT green-on-black terminal aesthetic
+ * - Provides custom styling for interactive form elements (select, checkbox)
+ * - Ensures responsive container layouts and consistent button feedback
+ * - Enforces Terminal font and Neon Purple border scheme
+ */
+
+/* =========================================
+   GLOBAL SYSTEM DEFAULTS
+   ========================================= */
+
+body {
+    font-family: 'Terminal', 'Courier New', Courier, monospace;
+    background-color: #0a0a0a;
+    color: #33ff33; /* Classic CRT Green */
+    padding: 40px;
+    margin: 0;
+}
+
+/* Primary monitor frame container */
+.container {
+    width: 750px;
+    margin: 20px auto;
+    background: #000;
+    padding: 30px;
+    border: 2px solid #bc13fe; /* Neon Purple */
+    box-shadow: 0 0 15px rgba(188, 19, 254, 0.2);
+    box-sizing: border-box;
+}
+
+/* Header with multi-layered neon bleed */
+h2 {
+    color: #33ff33;
+    text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33, 0 0 20px #33ff33;
+    border-bottom: 2px solid #bc13fe;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   TABLE DATA INTERFACE
+   ========================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+/* Inverted block header bar */
+thead th {
+    background-color: #33ff33;
+    color: #000;
+    padding: 0;
+}
+
+thead th a {
+    display: block;
+    padding: 12px 15px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+thead th a:hover {
+    background-color: #00cc00;
+    text-decoration: underline;
+}
+
+/* Row separation and hover feedback */
+td {
+    padding: 15px;
+    border-bottom: 1px solid #1a1a1a;
+    color: #33ff33;
+}
+
+tbody tr:hover {
+    background-color: #111;
+}
+
+/* =========================================
+   INTERACTIVE BUTTONS
+   ========================================= */
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    margin-bottom: 10px;
+    background: #000;
+    color: #33ff33;
+    text-decoration: none;
+    border: 1px solid #33ff33;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.btn-back {
+    display: inline-block;
+    width: auto;
+    padding: 12px 24px;
+}
+
+.btn:hover {
+    background: #33ff33;
+    color: #000;
+    box-shadow: 0 0 10px #33ff33;
+}
+
+/* Error/Destructive action button */
+.btn-danger {
+    color: #ff3333;
+    border-color: #ff3333;
+}
+
+.btn-danger:hover {
+    background: #ff3333;
+    color: #000;
+    box-shadow: 0 0 10px #ff3333;
+}
+
+/* =========================================
+   SYSTEM ALERT MESSAGES
+   ========================================= */
+
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #33ff33;
+    background: #050505;
+}
+
+.warning-msg {
+    color: #ffb000; /* Retro Yellow Alert */
+    border-color: #ffb000;
+}
+
+.error-msg {
+    color: #ff3333;
+    border-color: #ff3333;
+}
+
+.success-msg {
+    color: #ff00ff; /* Magenta Success */
+    border-color: #ff00ff;
+	font-weight: bold;
+}
+
+/* =========================================
+   FORM INPUTS AND SEARCH TOOLS
+   ========================================= */
+
+/* Administrative tool grouping */
+.tool-group {
+    border: 1px solid #bc13fe;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.tool-group p {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Spacing between inputs and results */
+form {
+    margin-bottom: 20px;
+}
+
+/* Enforce Terminal font and Purple borders on inputs */
+input[type="text"], 
+input[type="number"],
+input[type="search"],
+select {
+    width: 100%;
+    background: #000;
+    color: #33ff33;
+    border: 1px solid #bc13fe;
+    padding: 8px;
+    font-family: 'Terminal', inherit;
+    box-sizing: border-box;
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Match purple theme for placeholder text */
+::placeholder {
+    color: #bc13fe;
+    opacity: 0.7;
+}
+
+/* Terminal-style dropdown arrow */
+select {
+    background-image: linear-gradient(45deg, transparent 50%, #33ff33 50%),
+                      linear-gradient(135deg, #33ff33 50%, transparent 50%);
+    background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+}
+
+select option {
+    background: #000;
+    color: #33ff33;
+}
+
+/* Perfect alignment for Search Bar and Button */
+.search-bar {
+    width: 70% !important;
+    display: inline-block;
+    height: 40px;
+    vertical-align: top;
+}
+
+.search-btn {
+    display: inline-block !important;
+    width: 25% !important;
+    height: 40px; 
+    vertical-align: top;
+    margin-bottom: 0; 
+}
+
+/* =========================================
+   CUSTOM RETRO CHECKBOX
+   ========================================= */
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    margin-top: 10px;
+}
+
+.checkbox-label {
+    margin-right: 15px; 
+}
+
+/* Hide native browser element */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Custom terminal box */
+.checkmark {
+    height: 18px;
+    width: 18px;
+    background-color: #000;
+    border: 1px solid #bc13fe;
+    display: inline-block;
+    position: relative;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #111;
+}
+
+/* Fill with green and glow when active */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #33ff33;
+    box-shadow: 0 0 10px #33ff33;
+}
