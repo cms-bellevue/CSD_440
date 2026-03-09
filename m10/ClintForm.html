@@ -1,0 +1,124 @@
+<!--
+ * Clint Scott
+ * CSD440 Server-Side Scripting
+ * Module 10 Programming Assignment
+ * Capstone Team Audit Input Form
+ * 03/08/2026
+ *
+ * This file:
+ * - Provides the HTML interface for submitting capstone team evaluation data
+ * - Collects teammate information and contribution metrics through a form
+ * - Performs client-side validation for text and numeric fields
+ * - Sends form data to ClintJSON.php using POST
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Capstone Team Audit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Capstone Team Evaluation</h2>
+
+    <form action="ClintJSON.php" method="POST">
+
+        <label for="teammate_name">Teammate Name</label>
+        <input
+            type="text"
+            id="teammate_name"
+            name="teammate_name"
+            pattern="[A-Za-z\s]{2,40}"
+            title="Enter a name using letters only."
+            required
+        >
+
+        <label for="claimed_skill">Claimed Skillset</label>
+        <input
+            type="text"
+            id="claimed_skill"
+            name="claimed_skill"
+            pattern="[A-Za-z\s]{2,40}"
+            title="Enter a skill description using letters."
+            required
+        >
+
+        <label for="contribution_tier">Contribution Category</label>
+        <select id="contribution_tier" name="contribution_tier" required>
+            <option value="">Select a category</option>
+            <option value="ghost">The Ghost (Zero commits)</option>
+            <option value="minimalist">The Minimalist (Bare minimum)</option>
+			<option value="limited">Limited Contributor (Minimal involvement)</option>
+			<option value="support">Support Contributor (Assisted with tasks)</option>
+			<option value="active">Active Contributor (Regular participation)</option>
+            <option value="backbone">The Backbone (Top weekly performer)</option>
+			<option value="leader">Team Leader (Primary contributor)</option>
+        </select>
+
+        <label for="attendance">Meeting Attendance (%)</label>
+        <input
+            type="number"
+            id="attendance"
+            name="attendance"
+            min="0"
+            max="100"
+            step="1"
+            required
+        >
+
+        <label for="slack_lag">Average Response Time (Hours)</label>
+        <input
+            type="number"
+            id="slack_lag"
+            name="slack_lag"
+            min="0"
+            step="1"
+            required
+        >
+
+        <label for="excuse_log">Primary Excuse for No-Show</label>
+        <input
+            type="text"
+            id="excuse_log"
+            name="excuse_log"
+            pattern="[A-Za-z\s]{2,100}"
+            title="Enter a short explanation."
+            required
+        >
+
+        <label for="quality_score">Code Quality Rating (1-10)</label>
+        <input
+            type="number"
+            id="quality_score"
+            name="quality_score"
+            min="1"
+            max="10"
+            step="1"
+            required
+        >
+
+        <label for="rehire_probability">Likelihood of Future Collaboration (%)</label>
+        <input
+            type="number"
+            id="rehire_probability"
+            name="rehire_probability"
+            min="0"
+            max="100"
+            step="1"
+            required
+        >
+
+        <button type="submit">Process Audit Data</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

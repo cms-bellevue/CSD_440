@@ -1,0 +1,146 @@
+/**
+ * Clint Scott
+ * CSD440 Server-Side Scripting
+ * Module 10 Programming Assignment
+ * JSON Serialization Stylesheet
+ * 03/08/2026
+ *
+ * This program:
+ * - Defines the global visual identity for the JSON Data Encoder
+ * - Implements a clean, high-contrast professional interface
+ * - Provides custom styling for audit form elements and select menus
+ * - Ensures responsive container layouts and consistent button feedback
+ * - Enforces absolute pathing logic for assets where applicable
+ */
+
+
+/* =========================================
+    GLOBAL SYSTEM DEFAULTS
+   ========================================= */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #e8edf3);
+    color: #333;
+    padding: 40px;
+    margin: 0;
+}
+
+
+/* Primary interface frame container */
+
+.container {
+    max-width: 640px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+
+
+/* Header styling */
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+    FORM INPUTS AND INTERFACE
+   ========================================= */
+
+label {
+    display: block;
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95em;
+    box-sizing: border-box;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Input focus highlighting */
+
+input:focus,
+select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 4px rgba(52, 152, 219, 0.4);
+}
+
+
+/* =========================================
+    INTERACTIVE BUTTONS
+   ========================================= */
+
+button {
+    margin-top: 26px;
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+
+/* =========================================
+    JSON OUTPUT DISPLAY
+   ========================================= */
+
+pre {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+
+/* Error text formatting */
+
+.error-text {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+
+/* Navigation link back to form */
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #3498db;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
